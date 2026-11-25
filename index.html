@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Framecards — Lomocards & Fanmade Store ✨</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF6F5;
+      color: #1C1917;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-red-200 selection:text-red-900">
+
+  <!-- Barra de Anúncios -->
+  <div class="bg-[#4E1114] text-amber-100 text-xs sm:text-sm py-2 px-4 text-center font-medium">
+    ✨ Frete Grátis acima de R$ 80,00 • Cupom de 10% OFF: <span class="font-bold text-white bg-red-800/80 px-1.5 py-0.5 rounded">FRAMECARDS10</span> • Pronta Entrega & Sob Encomenda
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="sticky top-0 z-40 bg-[#FAF6F5]/95 backdrop-blur-md border-b border-red-100">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- Mini Logo SVG -->
+        <div class="w-11 h-11 rounded-xl bg-[#4E1114] flex items-center justify-center shadow-sm border border-red-900/40 shrink-0">
+          <svg viewBox="0 0 300 300" class="w-9 h-9">
+            <text x="86" y="192" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="146" fill="#B62827">F</text>
+            <text x="114" y="218" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="134" fill="#A63434" opacity="0.92">C</text>
+            <text x="152" y="184" font-family="'Alex Brush', cursive" font-size="44" fill="#E53935">kpop</text>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-extrabold text-lg sm:text-xl leading-tight text-stone-900">Framecards</h1>
+          <p class="text-xs text-stone-500 font-medium">Lomocards & Fanmade Store ✨</p>
+        </div>
+      </div>
+
+      <button onclick="toggleCart()" class="bg-[#E53935] hover:bg-red-700 active:scale-95 transition text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-md shadow-red-600/20">
+        <span>🛍️</span>
+        <span id="cart-count" class="bg-white text-[#E53935] w-5 h-5 rounded-full text-xs flex items-center justify-center font-extrabold">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-4 pt-8 pb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Texto Principal -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-red-50 border border-red-200 text-[#991B1B] px-3.5 py-1.5 rounded-full text-xs font-bold mb-5">
+          <span>🎴 Papel Couché 300g • Alta Definição</span>
+          <span>•</span>
+          <span>8,6 × 5,4 cm</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-stone-900 leading-[1.15] mb-4">
+          Complete seu binder com <span class="text-[#E53935]">lomocards perfeitos ✨</span>
+        </h2>
+
+        <p class="text-stone-600 text-base sm:text-lg leading-relaxed mb-7 max-w-2xl mx-auto lg:mx-0">
+          Packs exclusivos de 55 cards, kits holográficos e polaroids dos seus grupos favoritos. Escolha entre <strong class="text-stone-900">Pronta Entrega</strong> ou <strong class="text-stone-900">Sob Encomenda</strong> e finalize direto no WhatsApp ou Instagram!
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+          <a href="#catalogo" class="w-full sm:w-auto bg-[#E53935] hover:bg-red-700 text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-red-600/25 transition text-center">
+            Ver Catálogo Completo
+          </a>
+          <div class="flex w-full sm:w-auto gap-2.5">
+            <button onclick="setAvailabilityFilter('Pronta Entrega'); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})" class="flex-1 sm:flex-initial bg-[#15803D] hover:bg-green-800 text-white font-bold px-5 py-3.5 rounded-full transition text-sm">
+              🔥 Pronta Entrega
+            </button>
+            <button onclick="setAvailabilityFilter('Sob Encomenda'); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})" class="flex-1 sm:flex-initial bg-[#D97706] hover:bg-amber-700 text-white font-bold px-5 py-3.5 rounded-full transition text-sm">
+              ✨ Sob Encomenda
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Destaque com Logo Oficial -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative bg-[#4E1114] border-2 border-red-400/30 rounded-3xl p-5 shadow-2xl shadow-red-950/30 max-w-sm w-full">
+          <div class="aspect-square w-full rounded-2xl overflow-hidden bg-[#4E1114]">
+            <svg viewBox="0 0 300 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="300" fill="#
+  
